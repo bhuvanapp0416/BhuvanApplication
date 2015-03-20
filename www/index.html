@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<title>Bhuvan</title>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<td>Title :</td>
+			<td><input type="text" placeholder="Title" id="title" /></td>
+		</tr>
+		<tr>
+			<td><input type="button" id='locationInput' value="Get Location"
+				onclick="getLocation();" /></td>
+			<td>
+				<div id="locationDiv"></div>
+			</td>
+		</tr>
+		<tr>
+			<td>Picture :</td>
+			<td><input type="button" value="Upload"
+				onclick="getPicture();" /></td>
+		</tr>
+		<tr>
+			<td><img src="" id="capturedImage" alt="Image To be uploaded" /></td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td id="categoryTd"><select onchange="loadSubCategory()" id='categorySelect'>
+					<option value="0" selected>LANDUSE</option>
+					<option value="1">Built Up</option>
+					<option value="2">Water Bodies</option>
+					<option value="3">Forest</option>
+					<option value="4">Agricultural land</option>
+					<option value="5">Grassland &
+						Grazing land</option>
+					<option value="6">Wastelands</option>
+					<option value="7">Shifting cultivation</option>
+					<option value="8">Snow / Glacial area</option>
+			</select></td>
+			<td id="subCategory1" style="display: none"><select  class="subCategorySelect">
+					<option value="Built Up(Urban)">Built Up(Urban)</option>
+					<option value="Built Up(Rural)">Built Up(Rural)</option>
+					<option value="Mining / Industrial">Mining / Industrial</option>
+					<option value="Transportation">Transportation</option>
+			</select></td>
+			<td id="subCategory2" style="display: none"><select
+				class="subCategorySelect">
+					<option value="River / Stream / Drain">River / Stream /
+						Drain</option>
+					<option value="Canal ">Canal</option>
+					<option value="Lakes/Ponds ">Lakes/Ponds</option>
+					<option value="Reservoir/ Tanks">Reservoir/ Tanks</option>
+			</select></td>
+			<td id="subCategory3" style="display: none"><select
+				class="subCategorySelect">
+					<option value="Forest">Forest</option>
+					<option value="Forest Plantation">Forest Plantation  </option>
+					<option value="Mangrove / Swamp Area ">Mangrove / Swamp
+						Area</option>
+			</select></td>
+			<td id="subCategory4" style="display: none"><select
+				class="subCategorySelect">
+					<option value="Crop Fields">Crop Fields</option>
+					<option value="Agriculture plantation">Agriculture
+						plantation</option>
+					<option value="Aquaculture / Pisciculture">Aquaculture /
+						Pisciculture</option>
+			</select></td>
+			<td id="subCategory5" style="display: none"><select
+				class="subCategorySelect">
+					<option value="Grassland & Grazing land">Grassland &
+						Grazing land</option>
+			</select></td>
+			<td id="subCategory6" style="display: none"><select
+				class="subCategorySelect">
+					<option value="Salt affected">Salt affected</option>
+					<option value="Gullied  / ravenous ">Gullied / ravenous  </option>
+					<option value="Waterlogged ">Waterlogged</option>
+					<option value="Scrub land">Scrub land</option>
+					<option value="Sandy areas">Sandy areas</option>
+					<option value="Barren rocky">Barren rocky</option>
+			</select></td>
+			<td id="subCategory7" style="display: none"><select
+				class="subCategorySelect">
+					<option value="Shifting cultivation">Shifting cultivation</option>
+			</select></td>
+			<td id="subCategory8" style="display: none"><select
+				class="subCategorySelect">
+					<option value="Snow / Glacial area">Snow / Glacial area</option>
+			</select></td>
+		</tr>
+	</table>
+
+	<b>Submit the Data:</b>
+	<input type="radio" name="submission" value="YES" onchange="showSendMail(this.value)">YES
+	<input type="radio" name="submission" value="NO" onchange="showSendMail(this.value)">NO
+	<br>
+
+	<input type="button" value="Send Mail" id="sendMailButton"  disabled="disabled" onclick="exportMail()" />
+	
+</body>
+</html>

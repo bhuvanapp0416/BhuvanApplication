@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Testing Plugins</title>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript">
+	function testConsole() {
+		console.log("Console");
+	}
+	function testCamera() {
+		console.log(navigator.camera);
+	}
+	function testDevice() {
+		console.log(device.cordova);
+	}
+	function testFile() {
+		   console.log(cordova.file);
+	}
+	function testEmail() {
+		window.plugin.email.open({
+			app: "gmail",
+		    to:      "saiphani1117@gmail.com",
+		    subject: 'Congratulations',
+		    body:    '<h1>Happy Birthday!!!</h1>',
+		    isHtml:  true
+		});
+	}
+	function testGeo() {
+		console.log(navigator.geolocation);
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="Console" onclick="testConsole()" />
+	<br>
+	<input type="button" value="Camera" onclick="testCamera()" />
+	<br>
+	<input type="button" value="Device" onclick="testDevice()" />
+	<br>
+	<input type="button" value="File" onclick="testFile()" />
+	<br>
+	<input type="button" value="Email" onclick="testEmail()" />
+	<br>
+	<input type="button" value="GeoLocation" onclick="testGeo()" />
+	<br>
+</body>
+</html>
